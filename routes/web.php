@@ -11,5 +11,14 @@
 |
 */
 
+// Get all posts
 Route::get('/', 'PostsController@index');
+
+// Get the form to create a post
 Route::get('/posts/create', 'PostsController@create');
+
+// Get an individual post
+Route::get('/posts/{post}', 'PostsController@show');
+
+// Post a new post via the form
+Route::post('/posts', 'PostsController@store');
