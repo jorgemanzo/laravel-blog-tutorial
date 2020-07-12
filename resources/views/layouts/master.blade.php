@@ -26,6 +26,7 @@
 
     </div>
 
+    @include('layouts.errors')
 
     <div class="container">
 
@@ -44,3 +45,4 @@
   </body>
 
 </html>
+
