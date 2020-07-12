@@ -10,6 +10,8 @@
 
         <form method="POST" action="/posts" >
 
+            {{ csrf_field() }}
+
             <div class="form-group">
 
                 <label for="title">Title</label>
@@ -22,7 +24,7 @@
 
                 <label for="body">Body</label>
 
-                <textarea type="body" class="form-control" id="body"></textarea>
+                <textarea type="body" class="form-control" name="body" id="body"></textarea>
 
             </div>
 
