@@ -1,2 +1,2 @@
 #!/bin/bash
-docker exec -it maria mysql -uroot -p
+docker exec -it maria mysql -uroot -pdeadbeef

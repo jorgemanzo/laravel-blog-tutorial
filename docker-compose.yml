@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  db:
+    image: mariadb
+    container_name: maria
+    volumes:
+      - ./createremote.sql:/docker-entrypoint-initdb.d/createremote.sql
+    environment: 
+      MYSQL_ROOT_PASSWORD: deadbeef
+      MYSQL_DATABASE: blog
+    ports:
+      - "3306:3306"
+    tty: true
