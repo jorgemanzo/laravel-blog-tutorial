@@ -18,7 +18,7 @@ Route::get('/', 'PostsController@index');
 Route::get('/posts/create', 'PostsController@create');
 
 // Get an individual post
-Route::get('/posts/{post}', 'PostsController@show');
+Route::get('/posts/{post}', 'PostsController@show')->name('post');
 
 // Post a new post via the form
 Route::post('/posts', 'PostsController@store');
