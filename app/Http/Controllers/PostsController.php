@@ -10,14 +10,19 @@ use App\Post;
 
 class PostsController extends Controller
 {
+
+    private $active = 'home';
+
     public function index()
     {
-        return view('posts/index');
+        $posts = Post::latest()->get();
+        return view('posts/index', ['posts' => $posts, 'active' => $this->active]);
     }
 
     public function create()
     {
-        return view('posts/create');
+        $active = 'create';
+        return view('posts/create', compact('active'));
     }
 
     public function store()
@@ -28,15 +33,14 @@ class PostsController extends Controller
             'body' => 'required'
         ]);
 
-        Post::create(request(['title', 'body']));
+        $post = Post::create(request(['title', 'body']));
 
-        return redirect('/');
+        return redirect()->route('post', ['post' => $post->id]);
         
     }
 
     public function show(Post $post)
     {
-
-        return view('posts/post', ['post' => $post]);
+        return view('posts/show', ['post' => $post, 'active' => $this->active]);
     }
 }

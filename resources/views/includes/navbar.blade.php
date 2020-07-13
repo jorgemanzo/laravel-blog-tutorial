@@ -1,11 +1,8 @@
 <div class="blog-masthead">
     <div class="container">
         <nav class="nav blog-nav">
-        <a class="nav-link active" href="#">Home</a>
-        <a class="nav-link" href="#">New features</a>
-        <a class="nav-link" href="#">Press</a>
-        <a class="nav-link" href="#">New hires</a>
-        <a class="nav-link" href="#">About</a>
+            <a class="nav-link {{ $active == 'home' ? 'active' : '' }}" href="/">Home</a>
+            <a class="nav-link {{ $active == 'create' ? 'active' : '' }}" href="/posts/create">Create</a>
         </nav>
     </div>
 </div>

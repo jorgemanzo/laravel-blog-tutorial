@@ -1,16 +1,19 @@
-@extends('layouts.master')
 
-@section('content')
+<div class="blog-post">
             
-    <div class="col-sm-8 blog-main">
+    <h2 class="blog-post-title">
 
-        <div class="blog-post">
+        <a href="/posts/{{ $post->id }}">
             
-            <h2 class="blog-post-title">{{ $post->title }}</h2>
+            {{ $post->title }}
 
-            <p>{{ $post->body }}</p>
-        </div><!-- /.blog-post -->
- 
-    </div><!-- /.blog-main -->
+        </a>
+    
+    </h2>
+
+    <p class="blog-post-meta">{{ $post->created_at->toFormattedDateString() }}</p>
+
+    <p>{{ $post->body }}</p>
+
+</div><!-- /.blog-post -->
         
-@endsection
