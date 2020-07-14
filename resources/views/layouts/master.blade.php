@@ -2,51 +2,51 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    
-    @include('includes.header')
+    <head>
 
-  </head>
+        @include('includes.header')
 
-  <body>
+    </head>
 
-    @include('includes.navbar')
+    <body>
 
-    <div class="blog-header">
+        @include('includes.navbar')
 
-        <div class="container">
+        <div class="blog-header">
 
-                <h1 class="blog-title">The Bootstrap Blog</h1>
+            <div class="container">
 
-                <p class="lead blog-description">An example blog template built with Bootstrap.</p>
+                    <h1 class="blog-title">The Bootstrap Blog</h1>
+
+                    <p class="lead blog-description">An example blog template built with Bootstrap.</p>
+
+                </div>
 
             </div>
 
         </div>
 
-    </div>
+        @include('layouts.errors')
 
-    @include('layouts.errors')
+        <div class="container">
 
-    <div class="container">
+            <div class="row">
 
-      <div class="row">
+            <div class="col-sm-8 blog-main">
 
-        <div class="col-sm-8 blog-main">
+                @yield('content')
+                    
+            </div>
 
-            @yield('content')
-                
-        </div>
+            @include ('includes.sidebar')
 
-        @include ('includes.sidebar')
+            </div><!-- /.row -->
 
-      </div><!-- /.row -->
+        </div><!-- /.container -->
 
-    </div><!-- /.container -->
+        @include('includes.footer')
 
-    @include('includes.footer')
-
-  </body>
+    </body>
 
 </html>
 
