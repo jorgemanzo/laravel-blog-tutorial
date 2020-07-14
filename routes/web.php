@@ -22,3 +22,6 @@ Route::get('/posts/{post}', 'PostsController@show')->name('post');
 
 // Post a new post via the form
 Route::post('/posts', 'PostsController@store');
+
+// Post a new comment via the form
+Route::post('/posts/{post}/comments', 'CommentsController@store');
